@@ -14,6 +14,10 @@ exports.up = function(knex, Promise) {
       .timestamp("created_at")
       .notNullable()
       .defaultTo(knex.fn.now());
+  }).createTable("users", function(userTable) {
+    tasksTable.string("nome", 50).notNullable();
+    tasksTable.string("email", 50).notNullable();
+    tasksTable.string("senha", 50).notNullable();
   });
 };
 
